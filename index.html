@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nida Safdar – Academic & Technical Writer, React Developer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Figtree:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#F2F5FA;--surface:#FFFFFF;--ink:#16233F;--muted:#4D5B78;--line:#D5DDEA;--accent:#1B7F86;--accent-ink:#FFFFFF;--mark:#F4B73F;
+--serif:"Newsreader",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E1526;--surface:#162038;--ink:#E9EEF8;--muted:#A3B0CB;--line:#2A3858;--accent:#4FC3C9;--accent-ink:#0E1526;--mark:#F4B73F}}
+:root[data-theme="dark"]{--bg:#0E1526;--surface:#162038;--ink:#E9EEF8;--muted:#A3B0CB;--line:#2A3858;--accent:#4FC3C9;--accent-ink:#0E1526;--mark:#F4B73F}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 var(--sans)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px;gap:16px}
+.nav b{font:600 20px var(--serif)}
+.nav nav{display:flex;gap:20px;font-size:15px;overflow-x:auto}
+.nav nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+.nav nav a:hover{color:var(--ink)}
+.hero{padding:72px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font:600 clamp(44px,7vw,80px)/1 var(--serif);letter-spacing:-.02em;margin:0 0 20px}
+.hero .role{font:italic 400 clamp(20px,2.6vw,26px)/1.35 var(--serif);color:var(--muted);margin:0 0 20px}
+.hero p.lead{max-width:52ch;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{color:var(--accent)}
+.badge{display:inline-block;background:var(--mark);color:#16233F;font-weight:600;font-size:14px;padding:4px 12px;border-radius:99px;margin-bottom:20px}
+.dual{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tabs{display:flex;border-bottom:1px solid var(--line)}
+.tabs button{flex:1;padding:12px;background:none;border:0;font:600 15px var(--sans);color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);box-shadow:inset 0 -3px 0 var(--accent)}
+.pane{padding:22px;min-height:250px}
+.pane[hidden]{display:none}
+.pane.essay{font:400 17px/1.7 var(--serif)}
+.pane.essay h4{font:600 20px var(--serif);margin:0 0 8px}
+.pane.essay small{display:block;margin-top:12px;color:var(--muted);font:14px var(--sans)}
+.pane.code{font:14px/1.7 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-x:auto}
+.pane.code .k{color:var(--accent)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+h2{font:600 clamp(30px,4vw,42px)/1.15 var(--serif);margin:0 0 12px;letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:60ch;margin:0 0 32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px}
+.card h3{font:600 22px/1.25 var(--serif);margin:0 0 8px}
+.card p{margin:0 0 12px;color:var(--muted);font-size:16px}
+.tag{display:inline-block;font-size:13px;font-weight:500;padding:2px 10px;border:1px solid var(--line);border-radius:99px;margin:0 6px 6px 0}
+.tag.w{border-color:var(--mark);background:color-mix(in srgb,var(--mark) 22%,transparent)}
+.filters{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap}
+.filters button{padding:8px 18px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 15px var(--sans);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.card .meta{font-size:14px;color:var(--muted);margin-bottom:8px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.skills h3{font:600 20px var(--serif);margin:0 0 8px}
+.skills p{margin:0;color:var(--muted);font-size:16px}
+.timeline{list-style:none;margin:0;padding:0 0 0 22px;border-left:2px solid var(--line)}
+.timeline li{position:relative;margin:0 0 28px}
+.timeline li::before{content:"";position:absolute;left:-29px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.timeline b{font:600 20px var(--serif)}
+.timeline span{display:block;color:var(--muted);font-size:15px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:32px}
+.contact a.big{font:600 clamp(22px,4vw,34px) var(--serif);color:var(--accent);word-break:break-all}
+.wide{grid-column:1/-1}details{margin-top:12px}summary{cursor:pointer;font-weight:600;color:var(--accent)}.read{font:400 18px/1.75 var(--serif);max-width:68ch;margin-top:16px}.read h4{font:600 21px var(--serif);margin:24px 0 6px}.read p{color:var(--ink);font-size:18px;margin:0 0 14px}.card ol{margin:8px 0 0;padding-left:22px;columns:2;font-size:15px;color:var(--muted)}table{border-collapse:collapse;width:100%;font-size:14px;margin-top:12px}th,td{border:1px solid var(--line);padding:6px 10px;text-align:left}th{background:var(--bg)}.tw{overflow-x:auto}@media (max-width:600px){.card ol{columns:1}}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+@media (max-width:800px){.hero,.cols{grid-template-columns:1fr;gap:32px}.hero{padding-top:40px}.nav nav{gap:14px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><b>Nida Safdar</b>
+<nav aria-label="Sections"><a href="#work">Work</a><a href="#services">Services</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
+
+<main>
+<div class="wrap hero">
+ <div>
+  <span class="badge">Available for remote projects</span>
+  <h1>Nida Safdar</h1>
+  <p class="role">Academic and technical writer who also builds web and mobile apps.</p>
+  <p class="lead">I’m a Software Engineering graduate (CGPA 3.53/4.00) and working teacher. I research from credible sources, structure work logically, explain ideas step by step, and deliver original, properly referenced writing on time.</p>
+  <div class="btns"><a class="btn p" href="#work">See my work</a><a class="btn s" href="#contact">Hire me</a></div>
+ </div>
+ <div class="dual" aria-label="Two sides of my work">
+  <div class="tabs" role="tablist">
+   <button role="tab" id="t1" aria-selected="true" aria-controls="p1">I write</button>
+   <button role="tab" id="t2" aria-selected="false" aria-controls="p2">I build</button>
+  </div>
+  <div class="pane essay" id="p1" role="tabpanel" aria-labelledby="t1">
+   <h4>Why do networks need layers?</h4>
+   <p>A message sent across the internet passes through many hands. Layering gives each stage one job, so a fault in one place can be found and fixed without rebuilding everything else.</p>
+   <small>Sample opening paragraph: formal tone, clear structure, cited in APA.</small>
+  </div>
+  <div class="pane code" id="p2" role="tabpanel" aria-labelledby="t2" hidden><span class="k">function</span> ProjectCard({ title, tags }) {
+  <span class="k">return</span> (
+    &lt;article className="card"&gt;
+      &lt;h3&gt;{title}&lt;/h3&gt;
+      {tags.map(t =&gt; &lt;Tag key={t} label={t} /&gt;)}
+    &lt;/article&gt;
+  );
+}
+<span style="color:var(--muted)">// Reusable React components, responsive by default</span></div>
+ </div>
+</div>
+
+<section id="work"><div class="wrap">
+ <h2>Selected work</h2>
+ <p class="sub">Writing samples and development projects. Writing pieces are samples I prepared to show my process and style.</p>
+ <div class="filters" role="group" aria-label="Filter projects">
+  <button data-f="all" aria-pressed="true">All</button><button data-f="writing" aria-pressed="false">Writing</button><button data-f="dev" aria-pressed="false">Development</button><button data-f="docs" aria-pressed="false">Documentation</button><button data-f="other" aria-pressed="false">Slides and data</button>
+ </div>
+ <div class="grid" id="projects">
+  <article class="card wide" data-c="docs" style="border:2px solid var(--accent)"><div class="meta">Featured · Final Year Project documentation · 98 pages · Team project with Farooq Zahid</div><h3>Campus Mobility &amp; Occupancy Analytics System</h3><p>The full engineering report for my BS Software Engineering final year project at GCUF (Session 2022–2026). The system turns ordinary CCTV or webcam footage into live people counts, occupancy tracking and crowd-surge alerts. Supervisor: Sir Numan-ul-haq.</p><span class="tag w">Technical documentation</span><span class="tag w">SRS and UML</span><span class="tag w">Database design</span><span class="tag">YOLOv8</span><span class="tag">DeepSORT</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Supabase</span>
+<details><summary>What the report covers</summary><div class="read">
+<h4>The problem</h4>
+<p>Counting people at campus entrances by hand is slow and differs from one observer to the next. Most campuses already have CCTV, but it is only used for watching or for reviewing incidents. Our project gives that footage a numeric signal that can support planning, staffing and safety.</p>
+<h4>What we built</h4>
+<p>A full-stack web platform that runs on a mid-range laptop with no dedicated GPU. YOLOv8 detects people, DeepSORT tracks them, and a virtual-line counter records an IN or OUT event only when someone actually crosses the line, which prevents the same person being counted twice. Annotated video reaches the browser as a continuous stream, and rolling one-minute recordings let an operator scrub back through the past. The dashboard shows live occupancy, incoming and outgoing counts, hourly trends, gate comparison, peak hours and a rush alert based on a statistical Z-score.</p>
+<h4>Chapters</h4>
+<p>1. Introduction: scope, objectives, process model<br>2. Literature review: background, tools, related research<br>3. Analysis and design: requirements, use cases, activity, sequence, class, component and deployment diagrams<br>4. Database design: data dictionary, DFDs, ER diagram, normalisation<br>5. Interface snapshots: administrator and user screens<br>Also included: tests at unit, integration, end-to-end and acceptance level, and a clear scope boundary that excludes face recognition and behaviour detection for privacy reasons.</p>
+</div></details></article>
+<article class="card wide" data-c="writing"><div class="meta">Technical blog · Computer vision explained simply</div><h3>From Webcam to Crowd Counter: How Our Campus System Works</h3><p>A plain-language article that explains a complex project to non-technical readers.</p><span class="tag w">Technical blog</span><span class="tag w">Explaining complex ideas</span>
+<details><summary>Read the article</summary><div class="read">
+<p>Every campus has cameras. Very few use them to answer a simple question: how many people are here right now? Counting by hand at a gate is slow, and two people standing side by side will often get two different totals. For our final year project, we set out to let the cameras count instead.</p>
+<h4>Step 1: Find the people</h4>
+<p>The system uses a detection model called YOLOv8 to spot people in each video frame. Because many entrances are dim, we first brighten the image with a technique called CLAHE, and we ignore boxes that are far too big or too small to be a person.</p>
+<h4>Step 2: Follow them</h4>
+<p>A tracker called DeepSORT gives each person an identity number and follows them from frame to frame. Without it, the computer would see a fresh crowd in every picture.</p>
+<h4>Step 3: Count only real crossings</h4>
+<p>Early counting methods simply counted whoever was visible, so a person who was briefly lost and found again was counted twice. We borrowed an idea from commercial people-counting cameras instead. A virtual line is drawn across the entrance, and a person adds one to IN or OUT only when they actually cross it. Each person can add at most one IN and one OUT.</p>
+<h4>Step 4: Show it clearly</h4>
+<p>A web dashboard displays current occupancy, arrivals, departures, hourly trends and a comparison between gates. A statistical check watches the last ten minutes and raises a rush alert when traffic jumps well above normal. Recorded one-minute clips let a staff member slide back in time and watch what happened.</p>
+<h4>What it deliberately does not do</h4>
+<p>The system counts people. It does not recognise faces or try to detect fights, because those tasks need different technology and raise privacy concerns that go beyond crowd counting. That boundary was a design choice, and we think it makes the project easier to trust.</p>
+</div></details></article>
+<article class="card wide" data-c="docs"><div class="meta">User guide · Documentation sample</div><h3>Quick-Start Guide: Using the Occupancy Dashboard</h3><p>A short operator guide written from the project report. Button names may differ slightly in the final interface.</p><span class="tag w">User guide</span><span class="tag w">Step-by-step writing</span>
+<details><summary>Read the guide</summary><div class="read"><ol style="columns:1;font-size:18px;color:var(--ink);line-height:1.7">
+<li><strong>Add a camera.</strong> Register a CCTV or IP camera, or use the one-click option to add your laptop webcam for a demo.</li>
+<li><strong>Set the counting line.</strong> Place the virtual line across the doorway so that people cross it when entering or leaving.</li>
+<li><strong>Read the live cards.</strong> Check current occupancy, incoming, outgoing and rush status at a glance.</li>
+<li><strong>Study the charts.</strong> Use the hourly trend, the gate comparison and the peak-hours panel to plan staffing and space.</li>
+<li><strong>Replay the past.</strong> Drag the timeline slider back to watch any minute inside the retention window.</li>
+<li><strong>Compare cameras.</strong> Open the multi-camera view to see which entrance is busiest.</li>
+</ol><p style="margin-top:14px;color:var(--muted);font-size:16px">Tip: if a rush alert appears, check the live video first, then the trend chart, to see whether the surge is expected, such as a class change.</p></div></details></article>
+<article class="card" data-c="writing"><div class="meta">Writing sample · Academic essay</div><h3>The Role of Layered Architecture in Computer Networks</h3><p>A 1,500-word essay with a clear thesis, body arguments and conclusion, supported by credible textbook and journal sources.</p><span class="tag w">APA referencing</span><span class="tag w">Low similarity</span></article>
+  <article class="card" data-c="writing"><div class="meta">Writing sample · Technical article</div><h3>React State, Explained Step by Step</h3><p>A beginner-friendly guide to useState with small examples, plain-language explanations and a short practice exercise.</p><span class="tag w">Technical writing</span><span class="tag w">React JS</span></article>
+  <article class="card" data-c="writing"><div class="meta">Writing sample · Report</div><h3>Database Normalization: A Structured Report</h3><p>A formal report on normal forms with worked table examples, headings, a summary and a full reference list.</p><span class="tag w">Report writing</span><span class="tag w">SQL</span></article>
+  <article class="card" data-c="writing"><div class="meta">Writing sample · Lesson material</div><h3>Introduction to Programming: Lesson Pack</h3><p>Lesson notes, practice exercises and a short assessment written for first-year students, based on what I teach.</p><span class="tag w">Educational content</span><span class="tag w">Assessments</span></article>
+  <article class="card" data-c="writing"><div class="meta">Writing sample · Proofreading</div><h3>Edit and Proofread: Student Assignment</h3><p>A before-and-after edit improving grammar, flow and academic tone while keeping the author’s ideas intact.</p><span class="tag w">Editing</span><span class="tag w">Proofreading</span></article>
+  <article class="card wide" data-c="writing"><div class="meta">Blog sample 1 of 5 · Remote work series · 900 words</div><h3>Remote Work and Productivity: What Really Changes When the Office Disappears</h3><p>Part of a five-blog series on the benefits and challenges of remote work in modern businesses.</p><span class="tag w">Blog writing</span><span class="tag w">Productivity</span><span class="tag w">Original content</span>
+<details><summary>Read the full blog</summary><div class="read">
+<p>For decades, productivity had a place: a desk, a building, a manager walking past. When millions of people moved their work home, businesses learned that where we work matters less than how we work. Remote work is neither a perk nor a problem on its own. It is a different way of organising effort, and it rewards the companies that plan for it.</p>
+<h4>Why productivity can rise</h4>
+<p>The strongest evidence comes from a well-known experiment by Stanford economist Nicholas Bloom and colleagues at the travel company Ctrip. Call-centre employees who worked from home for nine months performed about 13 percent better than office colleagues, partly because they took fewer breaks and sick days and worked in a quieter setting.</p>
+<p>Three things explain most of the gains. First, there is no commute, which gives people back time and energy. Second, a home workspace has fewer casual interruptions than an open-plan office. Third, remote work pushes teams to judge results instead of hours. A designer who delivers a finished layout by Thursday has done the job, whether she worked from 9 to 5 or from 7 to 2.</p>
+<h4>Where productivity slips</h4>
+<p>Remote work also has real costs. Home can be noisy, shared, or short on a good desk and a reliable internet connection. Some people find it hard to stop working, so the day stretches. Others lose focus without the structure an office gives them. New hires suffer most, because they pick up habits by watching colleagues, and a video call is a poor substitute for sitting nearby.</p>
+<p>Isolation is the challenge people mention most often. Without casual chats, employees can feel cut off from the team and from the purpose of their work. Over time, loneliness lowers motivation, and motivation is the heart of productivity.</p>
+<h4>Communication is the hinge</h4>
+<p>In an office, a quick question takes ten seconds. Remotely, the same question can sit unanswered for hours, and tone is easily misread in a short message. Teams that work well at a distance treat communication as a system rather than a habit. They agree which tool is used for what: chat for quick questions, email for formal decisions, a shared task board for progress. They write messages that make sense on their own, with the context, the request and the deadline included.</p>
+<p>Time zones add a further layer. A team spread across several countries cannot rely on live meetings alone, so written updates and recorded walkthroughs become essential. GitLab, a company that has operated fully remotely since its early days, is often cited because it publishes its handbook openly and relies on documentation so that nobody has to wait for an answer from a colleague who is asleep.</p>
+<h4>Practical strategies that work</h4>
+<p><strong>Set clear goals.</strong> Give each person a small number of measurable outcomes each week. When goals are visible, trust grows and micromanagement fades.</p>
+<p><strong>Create routines.</strong> A short daily check-in, a weekly planning call and a fixed end-of-day time keep the team in rhythm and protect personal time.</p>
+<p><strong>Make space for people.</strong> Open a chat channel for non-work talk, hold occasional virtual coffee breaks, and meet in person once or twice a year if the budget allows. These small touches work directly against isolation.</p>
+<p><strong>Invest in the basics.</strong> Reliable video software, shared documents and a simple project board cost far less than the confusion they prevent. Offering a stipend for internet or a desk chair also sends a strong message that the company cares about how work is done.</p>
+<p><strong>Train managers.</strong> Leading a remote team is a skill. Managers need to learn how to give feedback in writing, notice signs of burnout, and run meetings that respect everyone’s time.</p>
+<h4>The effect on the organisation</h4>
+<p>When these habits are in place, the gains reach the whole business. Companies can hire from a wider talent pool, reduce office costs, and often see lower staff turnover because employees value flexibility. When they are missing, the damage is just as visible: duplicated work, missed deadlines and quiet resignations. Organisational performance therefore depends less on the remote model itself than on the quality of management around it.</p>
+<h4>Conclusion</h4>
+<p>Remote work can raise productivity, but only when companies match its freedom with clarity, communication and care. The office is no longer the place where work happens by default. It is one option among several, and the smartest businesses will choose the mix that fits their people and their goals.</p>
+<p style="font:14px var(--sans);color:var(--muted)">Source consulted: Bloom, N., Liang, J., Roberts, J. and Ying, Z. J. (2015). Does Working from Home Work? Evidence from a Chinese Experiment. <em>Quarterly Journal of Economics</em>, 130(1), 165–218.</p>
+</div></details></article>
+<article class="card wide" data-c="writing"><div class="meta">Blog sample · Education and technology · 2,500-word brief</div><h3>How Artificial Intelligence Is Transforming Modern Education</h3><p>Opening and structure of the long-form blog. The full 2,500-word version follows this plan.</p><span class="tag w">Long-form blog</span><span class="tag w">AI in education</span>
+<details><summary>Read the opening and outline</summary><div class="read">
+<p>A student in Lahore struggles with algebra at ten in the evening. Her teacher has gone home, but an AI tutor explains the same problem three different ways until one finally makes sense. Scenes like this are already common, and they raise a bigger question: what happens to teaching when every learner has a patient assistant in their pocket?</p>
+<h4>Planned structure</h4>
+<p><strong>1. From chalkboards to chatbots.</strong> A short history of classroom technology and where AI fits.<br><strong>2. Personalized learning.</strong> How adaptive platforms adjust pace and difficulty for each student.<br><strong>3. Saving teachers’ time.</strong> Marking, lesson planning and feedback support.<br><strong>4. Academic integrity.</strong> The risks of AI-written assignments and how schools can respond with oral checks, drafts and clear policies.<br><strong>5. Data privacy.</strong> What student information AI tools collect and what schools should ask vendors.<br><strong>6. The teacher’s role.</strong> Why mentoring, judgement and empathy remain human work.<br><strong>7. Conclusion.</strong> Practical steps for schools starting with AI.</p>
+</div></details></article>
+<article class="card wide" data-c="other"><div class="meta">Presentation sample · 18 slides · Outline</div><h3>Renewable Energy Solutions for a Sustainable Future</h3><p>Slide plan. Each energy source gets how it works, benefits, limits and its effect on carbon emissions.</p><span class="tag">Slide design</span><span class="tag">Environmental science</span>
+<ol><li>Title slide</li><li>Why renewable energy matters</li><li>Energy mix today</li><li>Solar: how it works</li><li>Solar: benefits</li><li>Solar: limitations</li><li>Wind: how it works</li><li>Wind: benefits</li><li>Wind: limitations</li><li>Hydropower: how it works</li><li>Hydropower: benefits and limits</li><li>Geothermal: how it works</li><li>Geothermal: benefits and limits</li><li>Cutting carbon emissions</li><li>Comparison table</li><li>Pakistan’s opportunity</li><li>Key takeaways</li><li>Sources</li></ol></article>
+<article class="card wide" data-c="other"><div class="meta">Data entry sample · Excel · Dummy data</div><h3>Retail Sales Register to Excel</h3><p>A clean layout with invoice number, product, quantity, unit price and a total that is calculated and checked, never typed by hand.</p><span class="tag">Excel</span><span class="tag">High accuracy</span><div class="tw"><table><tr><th>Invoice</th><th>Product</th><th>Qty</th><th>Unit price (PKR)</th><th>Total (PKR)</th></tr><tr><td>INV-1001</td><td>Basmati rice 5 kg</td><td>2</td><td>1,950</td><td>3,900</td></tr><tr><td>INV-1002</td><td>Cooking oil 3 L</td><td>1</td><td>2,400</td><td>2,400</td></tr><tr><td>INV-1003</td><td>Tea 190 g</td><td>4</td><td>520</td><td>2,080</td></tr><tr><td>INV-1004</td><td>Sugar 1 kg</td><td>6</td><td>150</td><td>900</td></tr></table></div></article>
+<article class="card" data-c="dev"><div class="meta">GitHub · React Native</div><h3>Currency Converter</h3><p>Enter an amount, choose the source and target currencies, and get the result using real-time exchange rates. Shows state handling, API integration and user input.</p><span class="tag">React Native</span><span class="tag">JavaScript</span><span class="tag">Exchange-rate API</span><p style="margin:10px 0 0"><a class="btn s" style="padding:6px 14px;font-size:14px" href="https://github.com/nidasafdar/CurrencyConverter">View code on GitHub</a></p></article>
+<article class="card" data-c="dev"><div class="meta">GitHub · React, Node.js</div><h3>News and Blog Web App</h3><p>A responsive React website with page routing and a Node.js and Express backend connected to MongoDB, styled with Tailwind CSS.</p><span class="tag">React JS</span><span class="tag">Vite</span><span class="tag">Tailwind CSS</span><span class="tag">Express</span><span class="tag">MongoDB</span><p style="margin:10px 0 0"><a class="btn s" style="padding:6px 14px;font-size:14px" href="https://github.com/nidasafdar/newsapp">View code on GitHub</a></p></article>
+<article class="card" data-c="dev"><div class="meta">GitHub · Full-stack mobile</div><h3>Voting App</h3><p>An Expo-based mobile app with a Node.js backend that includes database setup and JWT authentication for secure sign-in.</p><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Node.js</span><span class="tag">JWT</span><p style="margin:10px 0 0"><a class="btn s" style="padding:6px 14px;font-size:14px" href="https://github.com/nidasafdar/Voting-App">View code on GitHub</a></p></article>
+<article class="card" data-c="dev"><div class="meta">GitHub · Python desktop app</div><h3>Advanced Password Encryption Tool</h3><p>A Tkinter desktop app that hashes or encrypts passwords with Argon2, Bcrypt, AES and a Caesar cipher, with show/hide, copy-to-clipboard and reset controls.</p><span class="tag">Python</span><span class="tag">Tkinter</span><span class="tag">Cryptography</span><p style="margin:10px 0 0"><a class="btn s" style="padding:6px 14px;font-size:14px" href="https://github.com/nidasafdar/CrptoTool">View code on GitHub</a></p></article>
+<article class="card" data-c="dev"><div class="meta">GitHub · React Native</div><h3>Calculator App</h3><p>A mobile calculator for basic arithmetic with a clean, easy-to-use interface, built in JavaScript as a mobile UI exercise.</p><span class="tag">React Native</span><span class="tag">Mobile UI</span><p style="margin:10px 0 0"><a class="btn s" style="padding:6px 14px;font-size:14px" href="https://github.com/nidasafdar/Calculator-App">View code on GitHub</a></p></article>
+<article class="card wide" data-c="dev"><h3>More on GitHub</h3><p>17 repositories in total, including a Python project on predicting Pakistan’s GDP.</p><a class="btn p" href="https://github.com/nidasafdar?tab=repositories">Browse all repositories</a></article>
+<article class="card" data-c="dev"><div class="meta">2024 · React JS, HTML, CSS</div><h3>Personal Portfolio Website</h3><p>A responsive portfolio built with reusable React components to showcase skills and projects.</p><span class="tag">React JS</span><span class="tag">Responsive UI</span></article>
+  <article class="card" data-c="dev"><div class="meta">2024 · SQL, DBMS</div><h3>Database Management System</h3><p>A relational database with normalization, CRUD operations, joins and data validation.</p><span class="tag">SQL</span><span class="tag">Database design</span></article>
+  <article class="card" data-c="dev"><div class="meta">2023 – Present · React Native, Node.js</div><h3>React Native Practice App</h3><p>Cross-platform mobile screens with navigation, state management and API calls.</p><span class="tag">React Native</span><span class="tag">API integration</span></article>
+ </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+ <h2>How I can help</h2>
+ <p class="sub">Every piece is researched, original and checked for low similarity before delivery.</p>
+ <div class="skills">
+  <div><h3>Assignments, reports and essays</h3><p>Clear introduction, body and conclusion in a formal academic tone.</p></div>
+  <div><h3>Research and referencing</h3><p>Credible sources, in-text citations, reference lists and fact-checking.</p></div>
+  <div><h3>Proofreading and editing</h3><p>Grammar, flow, structure and consistency, polished before you submit.</p></div>
+  <div><h3>Technical and IT writing</h3><p>Programming, networks, operating systems, databases and MS Office topics.</p></div>
+  <div><h3>Websites with React JS</h3><p>Responsive, component-based sites and portfolios.</p></div>
+  <div><h3>Mobile apps with React Native</h3><p>Cross-platform screens, navigation and API integration.</p></div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Skills</h2><p class="sub">Writing and development, side by side.</p>
+ <div class="grid">
+  <div class="card"><h3>Writing</h3><span class="tag">Academic writing</span><span class="tag">Referencing</span><span class="tag">Proofreading</span><span class="tag">Fact-checking</span><span class="tag">Lesson material</span></div>
+  <div class="card"><h3>Front end</h3><span class="tag">React JS</span><span class="tag">JavaScript ES6+</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Responsive design</span></div>
+  <div class="card"><h3>Mobile, backend and data</h3><span class="tag">React Native</span><span class="tag">Node.js basics</span><span class="tag">SQL</span><span class="tag">Relational design</span></div>
+  <div class="card"><h3>Tools</h3><span class="tag">Git and GitHub</span><span class="tag">VS Code</span><span class="tag">MS Word</span><span class="tag">Google Docs and Sheets</span><span class="tag">PowerPoint</span></div>
+ </div>
+</div></section>
+
+<section id="about"><div class="wrap cols">
+ <div>
+  <h2>Experience</h2>
+  <ul class="timeline">
+   <li><b>Teacher, Computer Science and IT</b><span>Present</span><p>I teach Introduction to Programming, Computer Networks, Operating Systems and MS Office. I turn complex ideas into simple language and write the lesson material, exercises and assessments myself.</p></li>
+  </ul>
+  <h2 style="margin-top:40px">Training</h2>
+  <ul class="timeline">
+   <li><b>Freelancing, DigiSkills</b><span>Jul – Oct 2022</span></li>
+   <li><b>Business Communication and Email Etiquette</b><span>Online learning</span></li>
+   <li><b>Front-End Development</b><span>HTML, CSS, JavaScript, React Native · 2023 – Present</span></li>
+  </ul>
+ </div>
+ <div>
+  <h2>Education</h2>
+  <ul class="timeline">
+   <li><b>BS Software Engineering</b><span>Government College University Faisalabad · 2026</span><p>CGPA 3.53 / 4.00</p></li>
+   <li><b>Intermediate (FSc ICS)</b><span>Saleem Nawaz Fazaia College, Karachi · 2021</span></li>
+   <li><b>Matriculation (Science)</b><span>FG Fazaia Public School, Karachi · 2019</span></li>
+  </ul>
+ </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <div class="contact">
+  <h2>Let’s work together</h2>
+  <p class="sub">Tell me your topic, word count and deadline, and I’ll reply with a plan.</p>
+  <p><a class="big" href="mailto:nida74663@gmail.com">nida74663@gmail.com</a></p>
+  <div class="btns" style="margin-top:20px">
+   <a class="btn p" href="mailto:nida74663@gmail.com?subject=Project%20enquiry">Email me</a>
+   <a class="btn s" href="https://github.com/nidasafdar">GitHub</a>
+   <a class="btn s" href="tel:+923197210477">0319 7210477</a>
+  </div>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap">© 2026 Nida Safdar · Chiniot, Pakistan · Working remotely</div></footer>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
+ document.querySelectorAll('.tabs button').forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});
+});});
+document.querySelectorAll('.filters button').forEach(function(b){b.addEventListener('click',function(){
+ var f=b.dataset.f;
+ document.querySelectorAll('.filters button').forEach(function(x){x.setAttribute('aria-pressed',x===b);});
+ document.querySelectorAll('#projects .card').forEach(function(c){c.hidden=!(f==='all'||c.dataset.c===f);});
+});});
+</script>
+</body>
+</html>
